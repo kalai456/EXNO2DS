@@ -51,7 +51,9 @@ df.describe()
 df.shape
 ```
 ![image](https://github.com/user-attachments/assets/5490999c-9591-4e07-a65c-8208cc902983)
-##Categorical data analysis
+
+# Categorical data analysis
+
 ```
 
 df.nunique()
@@ -83,7 +85,9 @@ df.rename(columns={'Sex':'Gender'},inplace=True)
 df
 ```
 ![image](https://github.com/user-attachments/assets/ecafa9c5-599a-48ac-93c3-e3039242e47b)
+# Bivariate Analysis
 ```
+
 sns.catplot(x="Gender",col="Survived",kind="count",data=df,height=5,aspect=.7)
 ```
 ![image](https://github.com/user-attachments/assets/d1e2a1f7-c475-4fc8-8344-a779fe29284c)
@@ -103,7 +107,10 @@ sns.scatterplot(x=df["Age"],y=df["Fare"])
 sns.jointplot(x="Age",y="Fare",data=df)
 ```
 ![image](https://github.com/user-attachments/assets/173a85e1-4660-4974-8e71-6c2880c4771d)
+
+# Multivariate Analysis
 ```
+
 fig, ax1 = plt.subplots(figsize=(8,5))
 plt = sns.boxplot(ax=ax1,x='Pclass',y='Age',hue='Gender',data=df)
 ```
@@ -112,7 +119,10 @@ plt = sns.boxplot(ax=ax1,x='Pclass',y='Age',hue='Gender',data=df)
 sns.catplot(data=df,col="Survived",x="Gender",hue="Pclass",kind="count")
 ```
 ![image](https://github.com/user-attachments/assets/44c6a3c5-a313-471a-88ad-04396ee1b40e)
+
+# Co-relation
 ```
+
 corr=df.corr()
 sns.heatmap(corr,annot=True)
 ```
